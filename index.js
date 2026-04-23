@@ -121,7 +121,7 @@ client.on("interactionCreate", async (interaction) => {
   if (interaction.isStringSelectMenu() && interaction.customId === "region") {
     const region = interaction.values[0];
     return interaction.reply({
-      content: `📌 **คุณเลือก: ${region}**\n📍 กรุณาเลือกจังหวัดต่อเลยครับ`,
+      content: `📌 **คุณเลือก : ${region}**\n📍 กรุณาเลือกโซนของคุณ`,
       components: [provinceMenu(region), resetBtn()],
       ephemeral: true,
     });
@@ -152,7 +152,7 @@ client.on("interactionCreate", async (interaction) => {
       // เพิ่มยศใหม่
       await member.roles.add(role);
       return interaction.reply({
-        content: `✅ รับยศ **${province}** เรียบร้อยแล้วครับ!`,
+        content: `✅ คุณได้รับยศ **${province}** เรียบร้อยแล้ว!`,
         ephemeral: true,
       });
 
@@ -178,7 +178,7 @@ client.on("interactionCreate", async (interaction) => {
       }
 
       await member.roles.remove(rolesToRemove);
-      return interaction.reply({ content: "🔄 รีเซ็ตยศโซนทั้งหมดของคุณแล้ว", ephemeral: true });
+      return interaction.reply({ content: "🔄 : รีเซ็ตยศโซนทั้งหมดของคุณแล้ว", ephemeral: true });
     } catch (err) {
       console.error(err);
       return interaction.reply({ content: "❌ ไม่สามารถรีเซ็ตยศได้", ephemeral: true });
